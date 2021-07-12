@@ -1,7 +1,7 @@
-//const means unchanging data, var is changing
+//const means unchanging data, var is changing (day2, ex5)
 
-const svgWidth = 700
-const svgHeight = 460;
+const svgWidth = 750
+const svgHeight = 500;
 
 const margin = {
     top: 20,
@@ -10,7 +10,7 @@ const margin = {
     left: 100
 };
 
-// Calculate chart width and height
+// Calculate chart width and height (day 2, ex5)
 const width = svgWidth - margin.left - margin.right;
 const height = svgHeight - margin.top - margin.bottom;
 
@@ -52,6 +52,7 @@ function renderYAxes(newYScale, yAxis) {
 
 
 // function used for updating circles group with a transition to new ones
+//https://www.d3-graph-gallery.com/graph/circularpacking_group.html
 
 function renderCircles(circlesGroup, newXScale, newYScale, chosenXAxis, chosenYAxis) {
 
@@ -82,7 +83,7 @@ function xScale(healthData, chosenXaxis) {
 }
 function yScale(healthData, chosenYaxis) {
     
-    // create scales
+    // create scales (day2, ex4)
     const yLinearScale = d3.scaleLinear()
       .domain([d3.min(healthData, d=>d[chosenYaxis])*0.8, d3.max(healthData, d=>d[chosenYaxis])*1.2 ])
       .range([height, 0]);
@@ -201,11 +202,11 @@ function updateToolTip(chosenXaxis, chosenYaxis, circlesGroup){
                               .style("font-size", "7px")
                               .style("font-weight", "800")
 
-     // create group for  3 x- axis labels
+     // create group for  3 x- axis labels; very boring
      const xlabelsGroup = chartGroup.append("g")
                                 .attr("transform", `translate(${width / 2}, ${height + 20 + margin.top})`);
     
-    // create group for  3 y- axis labels
+    // create group for  3 y- axis labels; also boring
     const ylabelsGroup = chartGroup.append("g")
                                 .attr("transform", `translate(${0-margin.left/4}, ${height/2})`);
 
