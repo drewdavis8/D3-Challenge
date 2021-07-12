@@ -269,7 +269,7 @@ function updateToolTip(chosenXaxis, chosenYaxis, circlesGroup){
      // updateToolTip function after csv import
      circlesGroup = updateToolTip(chosenXaxis, chosenYaxis, circlesGroup);
 
-    // x axis labels event listener
+    // x axis labels event listener (day 3)
     xlabelsGroup.selectAll("text")
         .on("click", function() {
         // get value of selection
