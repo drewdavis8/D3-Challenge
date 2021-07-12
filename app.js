@@ -116,7 +116,7 @@ function updateToolTip(chosenXaxis, chosenYaxis, circlesGroup){
   else{
     yLabel = "Obesity: "
   }
-  //d - data / state & abbr columns in data
+  //d - data / state & abbr columns in data (DAY 3, EX6)
   const toolTip = d3.tip()
                     .attr("class", "d3-tip")
                     .offset([80, -60])
@@ -134,7 +134,7 @@ function updateToolTip(chosenXaxis, chosenYaxis, circlesGroup){
                         return(`${d.state},${d.abbr}<br>${xLabel}${d[chosenXaxis]}<br>${yLabel}${d[chosenYaxis]}`)
                       }  
                     })
-  //hover function over data
+  //hover function over data (https://chartio.com/resources/tutorials/how-to-show-data-on-mouseover-in-d3js/)
   circlesGroup.call(toolTip);
   circlesGroup.on("mouseover", function(data){
     toolTip.show(data, this);
@@ -172,7 +172,9 @@ function updateToolTip(chosenXaxis, chosenYaxis, circlesGroup){
     const bottomAxis = d3.axisBottom(xLinearScale);
     const leftAxis = d3.axisLeft(yLinearScale);
 
-    // append X-axis
+    // append X-axis ('let' func:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+
+
     let xAxis = chartGroup.append("g")
                         .classed("x-axis", true)
                         .attr("transform", `translate(0, ${height})`)
