@@ -78,7 +78,7 @@ function xScale(healthData, chosenXaxis) {
       .domain([d3.min(healthData, d => d[chosenXaxis]*0.8),
         d3.max(healthData, d => d[chosenXaxis]*1.2)
       ])
-      .range([0, width]);
+      .range([20, width]);
     return xLinearScale;
 }
 function yScale(healthData, chosenYaxis) {
